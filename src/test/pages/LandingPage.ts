@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { expect, Page } from "@playwright/test";
 import { pageFixture } from "../hooks/pageFixture";
 import { PageElement } from "../resources/interfaces/iPageElement";
 import * as landingPageLocators from "../resources/landingPageLocators/landingPageLocators.json";
@@ -41,7 +41,7 @@ export class LandingPage {
     public async searchResults(): Promise<void> {
     const map = pageFixture.page.locator("#b4-b1-b18-b6-MapContainer");
     await map.hover();
-    await pageFixture.page.mouse.wheel(0, 2000);
+    await pageFixture.page.mouse.wheel(0, 50);
     const results = await pageFixture.page.locator(getResource('resultItems').selectorValue).all();
     console.log(`\nTherapie places in 🗺️  \x1b[1m\x1b[32m${this.selectedCity}\x1b[0m:`);
     for (let i = 0; i < results.length; i++) {
@@ -54,6 +54,7 @@ export class LandingPage {
         console.log(`   Address: ${address}`);
         console.log(`   Groups: ${groups}`);
         console.log(`   Free places: ${freePlaces}`);
+        await expect(this.landingPageLocators.resultItems().first()).toBeVisible({timeout: 5000});
     };
     };
 };
