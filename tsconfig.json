@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "types": ["node"]
+    },
+    
+  }

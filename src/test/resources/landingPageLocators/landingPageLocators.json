@@ -1,0 +1,21 @@
+{
+    "name": "Landing Page Locators",
+    "webElements": [
+        {
+            "elementName": "gruppenSuchenSearchBox",
+            "selectorValue": "//input[contains(@id,'b4-b2-b1-Input_SearchText')]"
+        },
+        {
+            "elementName": "gruppenSuchenBtn",
+            "selectorValue": "//button[contains(@class,'btn btn-primary phone-full-width OSFillParent')]"
+        },
+        {
+            "elementName": "practionerName",
+            "selectorValue": "//div[contains(@class,'list-item-mobile map-list-item')][FLAG]//span[contains(@class,'bold OSFillParent')]"
+        },
+        {
+            "elementName": "resultItems",
+            "selectorValue": "//div[contains(@class,'list-item-mobile map-list-item')]"
+        }
+    ]
+}
