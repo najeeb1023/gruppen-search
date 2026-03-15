@@ -26,7 +26,6 @@ export class LandingPage {
 
     public async goToUrl():Promise<void>{
         await pageFixture.page.goto("https://gruppenplatz.healthycloud.de/HC_GP_Public_Pages/");    
-        await pageFixture.page.locator('#accept').click();
     };
 
     public async enterCity(city: string):Promise<void>{
