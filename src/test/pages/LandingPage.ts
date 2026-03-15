@@ -39,13 +39,13 @@ export class LandingPage {
     };
 
     public async searchResults(): Promise<void> {
-    const map = pageFixture.page.locator("#b4-b1-b18-b6-MapContainer");
-    await map.hover();
-    await pageFixture.page.mouse.wheel(0, 50);
-    const results = await pageFixture.page.locator(getResource('resultItems').selectorValue).all();
+    const results = pageFixture.page.locator(
+        getResource('resultItems').selectorValue
+    );
+    const count = await results.count();
     console.log(`\nTherapie places in 🗺️  \x1b[1m\x1b[32m${this.selectedCity}\x1b[0m:`);
-    for (let i = 0; i < results.length; i++) {
-        const result = results[i];
+    for (let i = 0; i < count; i++) {
+        const result = results.nth(i);
         const practitionerName = await result.locator(".bold.OSFillParent").textContent();
         const address = await result.locator("span.OSFillParent").nth(1).textContent();
         const groups = await result.locator(".info-container div").first().textContent();
@@ -54,7 +54,6 @@ export class LandingPage {
         console.log(`   Address: ${address}`);
         console.log(`   Groups: ${groups}`);
         console.log(`   Free places: ${freePlaces}`);
-    };
-    await pageFixture.page.waitForTimeout(2000);
+        };
     };
 };
