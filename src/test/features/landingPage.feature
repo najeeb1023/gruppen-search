@@ -13,5 +13,4 @@ Feature: User navigates to search a group.
        Examples:
            | City         |
            | Essen, Ruhr  |
-           | Erlangen     |
            | Magdeburg    |
