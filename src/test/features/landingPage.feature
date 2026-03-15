@@ -1,6 +1,6 @@
 Feature: User navigates to search a group.
 
-    User search a group.
+    User searches for a therapie group via City.
 
     Background: User is landed on the webpage.
         Given The user navigates to the URL
