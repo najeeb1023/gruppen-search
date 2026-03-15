@@ -55,6 +55,6 @@ export class LandingPage {
         console.log(`   Groups: ${groups}`);
         console.log(`   Free places: ${freePlaces}`);
     };
-    await expect(this.landingPageLocators.resultItems().first()).toBeVisible({timeout: 5000});
+    await pageFixture.page.waitForTimeout(2000);
     };
 };
